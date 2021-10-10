@@ -1,0 +1,32 @@
+{
+  "name": "3dethserver",
+  "version": "1.0.0",
+  "description": "3deth backend functionality",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "lint": "eslint --fix --ext .js,.jsx .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "Derek Flynn",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "debug": "^2.6.9",
+    "dotenv": "^10.0.0",
+    "ethers": "^5.4.7",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "form-data": "^4.0.0",
+    "fs": "*",
+    "gcode-parser": "^1.3.7",
+    "http-terminator": "^3.0.0",
+    "mongodb": "^4.1.2",
+    "mongoose": "^6.0.7",
+    "mv": "^2.1.1",
+    "nodemon": "^2.0.12"
+  }
+}

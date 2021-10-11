@@ -19,7 +19,7 @@ app.use(fileUpload());
 app.use(cors());
 
 const mongoURI =
-  "mongodb+srv://Derek:Uberemo1234!@cluster0.9fhyh.mongodb.net/3dETH?retryWrites=true&w=majority";
+  "mongodb://localhost:27017";
 mongoose
   .connect(mongoURI, { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected"))

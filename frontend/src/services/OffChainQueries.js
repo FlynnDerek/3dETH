@@ -4,7 +4,7 @@ class OffChainQueries {
 
     getSellerEscrows = async function(address) {
       var data = "";
-        await axios.post("http://localhost:3000/getSellerEscrows", {
+        await axios.post("http://137.184.151.64:5000/getSellerEscrows", {
           sellerAddress: address,
         })
         .then((res) => {
@@ -19,7 +19,7 @@ class OffChainQueries {
 
       getBuyerEscrows = async function(address) {
         var data = "";
-          await axios.post("http://localhost:3000/getBuyerEscrows", {
+          await axios.post("http://137.184.151.64:5000/getBuyerEscrows", {
             buyerAddress: address,
           })
           .then((res) => {
@@ -37,7 +37,7 @@ class OffChainQueries {
        async getSellers() {
         var sData;
         await axios
-        .post("http://localhost:3000/getSellers", {
+        .post("http://137.184.151.64:5000/getSellers", {
         })
         .then((res) => {
            res.data = JSON.stringify(sData);

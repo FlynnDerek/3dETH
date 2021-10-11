@@ -5,7 +5,7 @@ const ADDRESS = '0xE038213C982e18c9A5A68B1B597a425610638360'
 class EscrowService {
 
     queryEscrows = async function(address) {
-        const web3 = await Web3("http://localhost:8545")       
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")       
         if (!web3) {
             return undefined
         }
@@ -14,7 +14,7 @@ class EscrowService {
     }
 
     purchaseOrder = async function(buyerAddress, sellerAddress, price) {
-        const web3 = await Web3("http://localhost:8545")        
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")        
         if (!web3) {
             return undefined
         }
@@ -31,7 +31,7 @@ class EscrowService {
     }
 
     stakeSeller = async function(buyerAddress, sellerAddress, stake) {
-        const web3 = await Web3("http://localhost:8545")        
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")        
         if (!web3) {
             return undefined
         }
@@ -48,7 +48,7 @@ class EscrowService {
 
 
     markShipped = async function(buyerAddress, sellerAddress) {
-        const web3 = await Web3("http://localhost:8545")        
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")        
         if (!web3) {
             return undefined
         }
@@ -63,7 +63,7 @@ class EscrowService {
     }
 
     finalizeEscrow = async function(buyerAddress) {
-        const web3 = await Web3("http://localhost:8545")        
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")        
         if (!web3) {
             return undefined
         }
@@ -78,7 +78,7 @@ class EscrowService {
     }
 
     openDispute = async function(buyerAddress) {
-        const web3 = await Web3("http://localhost:8545")        
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")        
         if (!web3) {
             return undefined
         }
@@ -93,7 +93,7 @@ class EscrowService {
     }
 
     closeDispute = async function(buyerAddress, sellerAddress) {
-        const web3 = await Web3("http://localhost:8545")        
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")        
         if (!web3) {
             return undefined
         }
@@ -115,7 +115,7 @@ class EscrowService {
 
     // UTILS
     convertToWei = async function(price) {
-        const web3 = await Web3("http://localhost:8545")        
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")        
         if (!web3) {
             return undefined
         }
@@ -129,7 +129,7 @@ class EscrowService {
     }
 
     convertFromWei = async function(price) {
-        const web3 = await Web3("http://localhost:8545")        
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")        
         if (!web3) {
             return undefined
         }
@@ -144,7 +144,7 @@ class EscrowService {
 
 
     getNetwork = async function() {
-        const web3 = await Web3("http://localhost:8545")        
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")        
         if (!web3) {
             return undefined
         }
@@ -166,7 +166,7 @@ class EscrowService {
     }
 
     getLoggedAccount = async function() {
-        const web3 = await Web3("http://localhost:8545")        
+        const web3 = await Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723")        
         if (!web3) {
             return undefined
         }

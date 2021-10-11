@@ -376,7 +376,7 @@ export default {
 
     registerNewUser() {
       axios
-        .post('http://localhost:3000/register', {
+        .post('https://3dethxyz.xyz/register', {
           sellerAddress: this.address,
           sellerEmail: this.email,
           sellerDescription: this.sellerDesc,
@@ -401,6 +401,7 @@ export default {
         })
         .then(res => {
           console.log(res.data)
+          window.alert("Registration Sucessful!")
         })
         .catch(err => {
           console.log('Error: ', err)

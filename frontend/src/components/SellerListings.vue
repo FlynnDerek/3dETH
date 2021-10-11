@@ -192,6 +192,8 @@
     </v-app-bar>
 
     <v-main>
+         <div id="ropstenBanner"><p id="ropstenText">Alpha Version 0.9.0
+           <span id="useRopsten">(Ropsten)</span></p></div>
       <v-container id="content" fluid>
         <div id="divMarket">
           <h2 id="title">Marketplace</h2>
@@ -287,7 +289,7 @@ import axios from 'axios'
 import Web3 from 'web3'
 import EscrowService from '../services/EscrowService.js'
 
-var web3 = new Web3('http://localhost:8545')
+var web3 = new Web3('https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723')
 var _escrowService = new EscrowService()
 
 export default {
@@ -341,7 +343,7 @@ export default {
 
   async mounted() {
     await axios
-      .post('http://localhost:3000/getSellers', {})
+      .post('https://3dethxyz.xyz/getSellers', {})
       .then(res => {
         this.sellerList = res.data
       })
@@ -381,6 +383,7 @@ export default {
   position: fixed;
   padding: 0;
   margin: 0;
+  z-index: 1000;
 }
 
 #appHomeLink {
@@ -405,7 +408,7 @@ export default {
 }
 
 #title {
-  margin-top: -5px;
+  margin-top: 25px;
   margin-left: 15px;
   font-weight: 300;
 }
@@ -458,5 +461,24 @@ table td {
 
 #routeSeller {
   margin-top: -20px;
+}
+
+#ropstenBanner {
+  width: 100vw;
+  height: 25px;
+ margin-top: -15px;
+  background-color: black;
+  position: fixed;
+  z-index: 100;
+}
+
+#ropstenText {
+  color: white;
+  text-align: center;
+  font-family: 'consolas';
+}
+
+#useRopsten {
+  color: #ef5074;
 }
 </style>

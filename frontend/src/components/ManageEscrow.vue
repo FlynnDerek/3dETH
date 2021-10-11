@@ -194,6 +194,8 @@
     </v-app-bar>
 
     <v-main>
+        <div id="ropstenBanner"><p id="ropstenText">Alpha Version 0.9.0
+           <span id="useRopsten">(Ropsten)</span></p></div>
       <v-container id="content" fluid>
         <div id="divMarket" class="col-md-12">
           <h2 id="title">Manage Orders</h2>
@@ -490,7 +492,7 @@ import copy from 'copy-to-clipboard'
 var _escrowService = new EscrowService()
 var _offChainQueries = new OffChainQueries()
 
-var web3 = new Web3('http://localhost:8545')
+var web3 = new Web3('https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723')
 
 export default {
   data: () => ({
@@ -563,7 +565,7 @@ export default {
 
     downloadBuyerFile(myPath) {
       axios
-        .post('http://localhost:3000/pathr', {
+        .post('https://3dethxyz.xyz/pathr', {
           path: myPath
         })
         .then(() => {
@@ -577,7 +579,7 @@ export default {
 
     async getFile(path) {
       await axios
-        .get('http://localhost:3000/download', {
+        .get('https://3dethxyz.xyz/download', {
           responseType: 'blob'
         })
         .then(response => {
@@ -643,6 +645,7 @@ export default {
   position: fixed;
   padding: 0;
   margin: 0;
+  z-index: 1000;
 }
 
 #appHomeLink {
@@ -666,7 +669,7 @@ export default {
 }
 
 #title {
-  margin-top: -5px;
+  margin-top: 15px;
   margin-left: 15px;
   font-weight: 300;
 }
@@ -815,5 +818,23 @@ tr {
 
 #spanSnackbar {
   margin-left: 10px;
+}
+#ropstenBanner {
+  width: 100vw;
+  height: 25px;
+ margin-top: -15px;
+  background-color: black;
+  position: fixed;
+  z-index: 100;
+}
+
+#ropstenText {
+  color: white;
+  text-align: center;
+  font-family: 'consolas';
+}
+
+#useRopsten {
+  color: #ef5074;
 }
 </style>

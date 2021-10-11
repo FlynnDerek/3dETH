@@ -95,6 +95,8 @@
   </v-app-bar>
 
   <v-main>
+      <div id="ropstenBanner"><p id="ropstenText">Alpha Version 0.9.0
+           <span id="useRopsten">(Ropsten)</span></p></div>
     <v-container id="content" fluid>
           <div id="sellerInfo">
           <h4 id="storeTitle">
@@ -379,7 +381,7 @@ import OffChainWrites from '../services/OffChainWrites.js'
 var _escrowService = new EscrowService;
 var _offChainWrites = new OffChainWrites;
 
-var web3 = new Web3("http://localhost:8545");
+var web3 = new Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723");
 
   export default {
     data: () => ({
@@ -421,7 +423,7 @@ var web3 = new Web3("http://localhost:8545");
          scale: 5
        },
         dropzoneOptions: {
-        url: "http://localhost:3000/uploadAsync",
+        url: "https://3dethxyz.xyz/uploadAsync",
         thumbnailWidth: 80,
         maxFilesize: 10000,
         maxFiles: 1,
@@ -646,7 +648,7 @@ var web3 = new Web3("http://localhost:8545");
       console.log(this.$route.params.seller)
 
        axios
-        .post("http://localhost:3000/getSellerPricing", {
+        .post("https://3dethxyz.xyz/getSellerPricing", {
           sellerAddress: this.$route.params.seller
         })
         .then((res) => {
@@ -745,7 +747,7 @@ var web3 = new Web3("http://localhost:8545");
 }
 
 #storeTitle {
-    padding-top: 10px;
+   margin-top: 30px;
     margin-left: 45px;
     font-weight: 300;
 }
@@ -949,6 +951,25 @@ font-weight: 300;  font-family: 'consolas';
 
 #tdSummaryModel {
   text-align: left;
+}
+
+#ropstenBanner {
+  width: 100vw;
+  height: 25px;
+ margin-top: -15px;
+  background-color: black;
+  position: fixed;
+  z-index: 900;
+}
+
+#ropstenText {
+  color: white;
+  text-align: center;
+  font-family: 'consolas';
+}
+
+#useRopsten {
+  color: #ef5074;
 }
 
 

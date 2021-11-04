@@ -2,7 +2,7 @@
   <div id="appContainer">
     <v-navigation-drawer id="navDrawer" app v-model="drawer" absolute temporary>
       <v-list id="navList">
-        <a id="appHomeLink" href="/#/app">
+        <a id="appHomeLink" href="/#/">
           <v-list-item link>
             <v-list-item-icon>
               <v-icon>mdi-storefront</v-icon>
@@ -194,8 +194,11 @@
     </v-app-bar>
 
     <v-main>
-        <div id="ropstenBanner"><p id="ropstenText">Alpha Version 0.9.0
-           <span id="useRopsten">(Ropsten)</span></p></div>
+      <div id="ropstenBanner">
+        <p id="ropstenText">
+          Alpha Version 0.9.0 <span id="useRopsten">(Ropsten)</span>
+        </p>
+      </div>
       <v-container id="content" fluid>
         <div id="divMarket" class="col-md-12">
           <h2 id="title">Manage Orders</h2>
@@ -492,7 +495,9 @@ import copy from 'copy-to-clipboard'
 var _escrowService = new EscrowService()
 var _offChainQueries = new OffChainQueries()
 
-var web3 = new Web3('https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723')
+var web3 = new Web3(
+  'https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e723'
+)
 
 export default {
   data: () => ({
@@ -822,7 +827,7 @@ tr {
 #ropstenBanner {
   width: 100vw;
   height: 25px;
- margin-top: -15px;
+  margin-top: -15px;
   background-color: black;
   position: fixed;
   z-index: 100;

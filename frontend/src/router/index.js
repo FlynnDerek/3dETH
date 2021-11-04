@@ -11,14 +11,14 @@ Vue.use(VueRouter)
 export default new Router({
     routes: [
       {
+        path: '/',
+        name: 'SellerListing',
+        component: SellerListing
+      },
+      {
         path: '/register',
         name: 'RegisterSeller',
         component: RegisterSeller
-      },
-      {
-        path: '/app',
-        name: 'SellerListing',
-        component: SellerListing
       },
       {
         path: '/app/store/:seller',

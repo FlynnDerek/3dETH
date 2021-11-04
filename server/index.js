@@ -19,7 +19,7 @@ app.use(fileUpload());
 app.use(cors());
 
 const mongoURI =
-  "mongodb://localhost:27017";
+  "mongodb+srv://Derek:Uberemo1234!@cluster0.9fhyh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 mongoose
   .connect(mongoURI, { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected"))
@@ -30,8 +30,6 @@ var _newSeller = new RegisterSeller();
 var _newEscrow = new NewEscrow();
 var folder_path = "./prints";
 const _ethMetrics = require("./Controllers/EthMetrics.js");
-const path = require("path");
-const { ppid } = require("process");
 
 var seller = mongoose.model("Seller");
 var escrow = mongoose.model("Escrow");

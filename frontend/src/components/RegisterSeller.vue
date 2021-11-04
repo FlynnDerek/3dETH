@@ -240,13 +240,6 @@
             <v-btn class="mr-4" x-large @click="reset">
               Clear Form
             </v-btn>
-
-            <!--<v-btn
-      color="warning"
-      @click="resetValidation"
-    >
-      Reset Validation
-    </v-btn>-->
           </div>
         </v-form>
       </div>
@@ -271,7 +264,7 @@ export default {
       v => !!v || 'E-mail is required',
       v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
     ],
-  
+
     sellerDesc: '',
     active: true,
     rating: 0,
@@ -401,7 +394,7 @@ export default {
         })
         .then(res => {
           console.log(res.data)
-          window.alert("Registration Sucessful!")
+          window.alert('Registration Sucessful!')
         })
         .catch(err => {
           console.log('Error: ', err)

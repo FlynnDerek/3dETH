@@ -2,7 +2,7 @@
   <div id="appContainer">
     <v-navigation-drawer id="navDrawer" app v-model="drawer" absolute temporary>
       <v-list id="navList">
-        <a id="appHomeLink" href="/#/app">
+        <a id="appHomeLink" href="/">
           <v-list-item link>
             <v-list-item-icon>
               <v-icon>mdi-storefront</v-icon>

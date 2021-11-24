@@ -369,7 +369,7 @@ export default {
 
     registerNewUser() {
       axios
-        .post('https://3dethxyz.xyz/register', {
+        .post('http://localhost:3000/register', {
           sellerAddress: this.address,
           sellerEmail: this.email,
           sellerDescription: this.sellerDesc,

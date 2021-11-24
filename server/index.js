@@ -19,7 +19,7 @@ app.use(fileUpload());
 app.use(cors());
 
 const mongoURI =
-  "mongodb+srv://Derek:Uberemo1234!@cluster0.9fhyh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+  "mongodb+srv://Derek:Uberemo1234!@cluster0.9fhyh.mongodb.net/3dETH?retryWrites=true&w=majority";
 mongoose
   .connect(mongoURI, { useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected"))
@@ -76,13 +76,11 @@ let currentPath = "";
 
 app.post("/pathr", (req, res) => {
   currentPath = req.body.path;
-  console.log(currentPath);
   res.send(req.body.path);
 });
 
 app.get("/download", (req, res) => {
   var _path = currentPath;
-  console.log("Download: " + _path);
   const file = __dirname + _path.substring(1);
   res.sendFile(file); // Set disposition and send it.
 });
@@ -182,7 +180,7 @@ app.post("/getBuyerEscrows", (req, res) => {
 app.post("/getSellerPricing", (req, res) => {
   var address = req.body.sellerAddress;
   seller.find(
-    { _sellerAddress: { $in: address } },
+    { _sellerAddress: { $in: address.toString() } },
     "_printerModel _printerMaterial _spoolColor _pricingSmall _pricingMedium _pricingLarge _shippingSmall _shippingMedium _shippingLarge _commissionFee _printerEndpoint _printerBearerToken",
     function (err, sellerPricing) {
       if (err) res.send(err);

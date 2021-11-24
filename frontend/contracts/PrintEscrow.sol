@@ -51,7 +51,7 @@ contract PrintEscrow {
     }
     
     // stake the seller and lock 25% of the escrow price into the contract
-    function stakeSeller(address _buyer_address, address payable _seller_address, uint256 _stake) onlySeller(_seller_address)  public payable {
+    function stakeSeller(address _buyer_address, address payable _seller_address, uint256 _stake) onlySeller(_seller_address) public payable {
         require( msg.value >= _stake);
         require( msg.sender.balance >= _stake);
         escrows[_buyer_address].sellerStaked = true;
@@ -76,7 +76,6 @@ contract PrintEscrow {
         _buyer_address.transfer(escrows[_buyer_address].price / 4);
         emit OrderFinalized(_buyer_address, escrows[_buyer_address].price);
     }
-    
 
     // Buyer can open a dispute if there is a problem
     function openDispute(address _buyer_address) onlyBuyer(_buyer_address) public {
@@ -92,7 +91,6 @@ contract PrintEscrow {
         require(escrows[_buyer_address].disputed = true, "No Dispute");
         _buyer_address.transfer(escrows[_buyer_address].price);
         _seller_address.transfer(escrows[_buyer_address].price / 4);
-         escrows[_buyer_address].disputed = true;
          emit DisputeClosed(_buyer_address);
     }
     

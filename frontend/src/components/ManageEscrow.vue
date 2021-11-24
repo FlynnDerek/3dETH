@@ -196,7 +196,7 @@
     <v-main>
       <div id="ropstenBanner">
         <p id="ropstenText">
-          Alpha Version 0.9.0 <span id="useRopsten">(Ropsten)</span>
+          Alpha Version 0.9.1 <span id="useRopsten">(Ropsten)</span>
         </p>
       </div>
       <v-container id="content" fluid>
@@ -570,7 +570,7 @@ export default {
 
     downloadBuyerFile(myPath) {
       axios
-        .post('https://3dethxyz.xyz/pathr', {
+        .post('http://localhost:3000/pathr', {
           path: myPath
         })
         .then(() => {
@@ -584,7 +584,7 @@ export default {
 
     async getFile(path) {
       await axios
-        .get('https://3dethxyz.xyz/download', {
+        .get('http://localhost:3000/download', {
           responseType: 'blob'
         })
         .then(response => {

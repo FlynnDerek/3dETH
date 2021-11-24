@@ -192,7 +192,7 @@
     </v-app-bar>
 
     <v-main>
-         <div id="ropstenBanner"><p id="ropstenText">Alpha Version 0.9.0
+         <div id="ropstenBanner"><p id="ropstenText">Alpha Version 0.9.1
            <span id="useRopsten">(Ropsten)</span></p></div>
       <v-container id="content" fluid>
         <div id="divMarket">
@@ -343,7 +343,7 @@ export default {
 
   async mounted() {
     await axios
-      .post('https://3dethxyz.xyz/getSellers', {})
+      .post('http://localhost:3000/getSellers', {})
       .then(res => {
         this.sellerList = res.data
       })

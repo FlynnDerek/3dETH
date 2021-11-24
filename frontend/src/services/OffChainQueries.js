@@ -4,7 +4,7 @@ class OffChainQueries {
   getSellerEscrows = async function(address) {
     var data = ''
     await axios
-      .post('https://3dethxyz.xyz/getSellerEscrows', {
+      .post('http://localhost:3000/getSellerEscrows', {
         sellerAddress: address
       })
       .then(res => {
@@ -20,7 +20,7 @@ class OffChainQueries {
   getBuyerEscrows = async function(address) {
     var data = ''
     await axios
-      .post('https://3dethxyz.xyz/getBuyerEscrows', {
+      .post('http://localhost:3000/getBuyerEscrows', {
         buyerAddress: address
       })
       .then(res => {
@@ -36,7 +36,7 @@ class OffChainQueries {
   async getSellers() {
     var sData
     await axios
-      .post('https://3dethxyz.xyz/getSellers', {})
+      .post('http://localhost:3000/getSellers', {})
       .then(res => {
         res.data = JSON.stringify(sData)
         return sData

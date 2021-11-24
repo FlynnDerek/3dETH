@@ -95,7 +95,7 @@
   </v-app-bar>
 
   <v-main>
-      <div id="ropstenBanner"><p id="ropstenText">Alpha Version 0.9.0
+      <div id="ropstenBanner"><p id="ropstenText">Alpha Version 0.9.1
            <span id="useRopsten">(Ropsten)</span></p></div>
     <v-container id="content" fluid>
           <div id="sellerInfo">
@@ -423,7 +423,7 @@ var web3 = new Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e7
          scale: 5
        },
         dropzoneOptions: {
-        url: "https://3dethxyz.xyz/uploadAsync",
+        url: "http://localhost:3000/uploadAsync",
         thumbnailWidth: 80,
         maxFilesize: 10000,
         maxFiles: 1,
@@ -472,7 +472,6 @@ var web3 = new Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e7
               document.getElementById("btnNext").style.opacity = '1';
               document.getElementById("btnNext").disabled = false;
               this.uploadResponse = response
-              console.log(this.uploadResponse)
             })
         }
       },
@@ -538,10 +537,6 @@ var web3 = new Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e7
       }
     },
 
-    calculatePricePerPrint() {
-        console.log(this.pricingSmall)
-    },
-
     pollAddr() {
     setInterval(function() {
         var dom = document.getElementById("updateBuyer")
@@ -554,7 +549,6 @@ var web3 = new Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e7
       },
 
       async submitShipping() {
-       console.log("method")
           if(this.$refs.form.validate()) {
               this.buyerStreetAddress.push(this.firstName, this.lastName,
               this.streetAddress, this.town, this.selectedState, this.selectedCountry,
@@ -583,12 +577,7 @@ var web3 = new Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e7
               var totalPrice = parseFloat(stake) + parseFloat(price);
 
               totalPrice.toFixed(6);
-
              _escrowService.convertToWei(totalPrice.toFixed(6)).then((data) =>{
-
-              console.log(this.buyerAddress + "||" +
-              this.$route.params.seller +  " || " + price + " || " + fullAddress + 
-              " || " + json.path +  " || " + json.name );
               this.printName = json.name;
 
               const _buyInstance = {
@@ -620,8 +609,6 @@ var web3 = new Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e7
         var download = this.buyInstance[0].printDL;
         sellerAddress.toLowerCase()
 
-        console.log( "METHOD SAVE: " + buyerAddress, sellerAddress, price, shipAddress, download)
-
         await _escrowService.purchaseOrder(buyerAddress, sellerAddress, price).then((data) => {
               console.log(data);
         })
@@ -629,7 +616,6 @@ var web3 = new Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e7
         await _offChainWrites.saveNewEscrow(sellerAddress.toLowerCase(), buyerAddress, price, shipAddress, download).then((data2) => {
                console.log(data2)
           })
-
       },
 
       cancelEscrow() {
@@ -639,16 +625,11 @@ var web3 = new Web3("https://ropsten.infura.io/v3/7217936b42764ec1ba1aef3f3d21e7
      },
 
      mounted() {
-      this.calculatePricePerPrint();
-
-
       document.getElementById("btnNext").disabled = true;
       document.getElementById("btnNext").style.opacity = '0.5';
 
-      console.log(this.$route.params.seller)
-
        axios
-        .post("https://3dethxyz.xyz/getSellerPricing", {
+        .post("http://localhost:3000/getSellerPricing", {
           sellerAddress: this.$route.params.seller
         })
         .then((res) => {

@@ -14,6 +14,8 @@
 ## Project setup
 
 ### Frontend
+
+#### Install
 ```
 cd frontend
 ```
@@ -38,6 +40,7 @@ npm run lint
 
 ### Backend
 
+#### Install
 ```
 cd server
 ```

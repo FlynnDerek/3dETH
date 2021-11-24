@@ -9,7 +9,7 @@
 
 **Contract Address:** [0x09642bbf6BC5eAfa739125723398f8eDb5C60e8C](https://ropsten.etherscan.io/address/0x09642bbf6BC5eAfa739125723398f8eDb5C60e8C)
 
-**Dapp Store:**[https://www.stateofthedapps.com/dapps/3deth](https://www.stateofthedapps.com/dapps/3deth)
+**Dapp Store:** [https://www.stateofthedapps.com/dapps/3deth](https://www.stateofthedapps.com/dapps/3deth)
 
 ## Project setup
 

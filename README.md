@@ -1,6 +1,6 @@
 # 3dETH
 
-[3deth-escrow-Management.png](https://postimg.cc/R640Bmrw)
+[![3deth-escrow-Management.png](https://i.postimg.cc/JnBHj7PY/3deth-escrow-Management.png)](https://postimg.cc/R640Bmrw)
 
 3dETH is a decentralized marketplace where people can buy, sell and bid on
 3d printing and CAD services. This proof-of-concept version uses an escrow smart contract to provide trustless ETH transactions between two or more parties. 

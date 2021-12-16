@@ -2,8 +2,9 @@
 
 [![3deth-escrow-Management.png](https://i.postimg.cc/JnBHj7PY/3deth-escrow-Management.png)](https://postimg.cc/R640Bmrw)
 
-3dETH is a decentralized marketplace where people can buy, sell and bid on
-3d printing and CAD services. This proof-of-concept version uses an escrow smart contract to provide trustless ETH transactions between two or more parties. 
+My senior project for college, and my submission to the 2021 ETHOnline hackathon!
+
+3dETH is a decentralized marketplace where people can buy and sell 3d printing and CAD services. I think the best use case for this project is helping people who don't have access to 3d printers, but have CAD projects where they want to prototype some of their designs. Ethereum was used as the financial vehicle in this project for its proven track record as a secure, universal currency. Further, by using a smart contract for the business logic, its possible to automate escrow management and creates a trustless environment. 
 
 **Current Network:** Ropsten Testnet
 
